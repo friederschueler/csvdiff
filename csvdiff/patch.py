@@ -261,8 +261,8 @@ def record_diff(lhs, rhs):
     "Diff an individual row."
     delta = {}
     for k in set(lhs).union(rhs):
-        from_ = lhs[k]
-        to_ = rhs[k]
+        from_ = lhs.get(k)
+        to_ = rhs.get(k)
         if from_ != to_:
             delta[k] = {'from': from_, 'to': to_}
 
